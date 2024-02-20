@@ -1,0 +1,18 @@
+const CryptoJS = require("crypto-js")
+
+const findLowestPositiveInteger = (secretKey) => {
+  let stopLoop = true
+
+  for (i = 0; stopLoop; i++) {
+    let md5hash = CryptoJS.MD5(`${secretKey}${i}`).toString()
+    let firstFiveChars = md5hash.substring(0, 5)
+    if (firstFiveChars === "00000") {
+      console.log(i)
+      stopLoop = false
+    }
+  }
+}
+
+findLowestPositiveInteger("yzbqklnj")
+
+console.log(CryptoJS.MD5("yzbqklnj282749").toString())
