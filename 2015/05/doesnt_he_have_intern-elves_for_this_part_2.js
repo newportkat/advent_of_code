@@ -1,21 +1,19 @@
 const findNiceStrings = (string) => {
-  // Input is one long string, need to divide into separate strings based on carriage return
   let arrayOfStrings = string.split(/\r?\n/)
-  // Create three tests that each string needs to pass to be defined as "nice"
-  const doubleLetters =
-    /a(?=a)|b(?=b)|c(?=c)|d(?=d)|e(?=e)|f(?=f)|g(?=g)|h(?=h)|i(?=i)|j(?=j)|k(?=k)|l(?=l)|m(?=m)|n(?=n)|o(?=o)|p(?=p)|q(?=q)|r(?=r)|s(?=s)|t(?=t)|u(?=u)|v(?=v)|w(?=w)|x(?=x)|y(?=y)|z(?=z)/
-  const exclusions = /a(?=b)|c(?=d)|p(?=q)|x(?=y)/
+
+  // Regular expression to match any two characters followed by the same two characters non-overlapping
+  const letterPairs = /(..).*?\1/
+  // Regular expression to match a letter, any letter, and then the same letter
+  const letterSandwich = /(.).\1/
 
   let totalNiceStrings = 0
 
   for (let i = 0; i < arrayOfStrings.length; i++) {
-    let totalVowels = arrayOfStrings[i].match(/[aeiou]/g)
-    if (totalVowels && totalVowels.length >= 3) {
-      if (doubleLetters.test(arrayOfStrings[i])) {
-        if (!exclusions.test(arrayOfStrings[i])) {
-          totalNiceStrings++
-        }
-      }
+    if (
+      letterPairs.test(arrayOfStrings[i]) &&
+      letterSandwich.test(arrayOfStrings[i])
+    ) {
+      totalNiceStrings++
     }
   }
 
