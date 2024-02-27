@@ -332,7 +332,7 @@ wire: go, signalOperator: AND, dependencies: [gl, gm], shiftFactor: undefined, v
 wire: gn, signalOperator: OR, dependencies: [gl, gm], shiftFactor: undefined, value: undefined
 wire: ag, signalOperator: AND, dependencies: [y, ae], shiftFactor: undefined, value: undefined
 wire: hw, signalOperator: OR, dependencies: [hv, hu], shiftFactor: undefined, value: undefined
-wire: b, signalOperator: ->, dependencies: [1674], shiftFactor: undefined, value: undefined
+wire: b, signalOperator: ->, dependencies: [46065], shiftFactor: undefined, value: undefined
 wire: ae, signalOperator: AND, dependencies: [ab, ad], shiftFactor: undefined, value: undefined
 wire: ad, signalOperator: NOT, dependencies: [ac], shiftFactor: undefined, value: undefined
 wire: hu, signalOperator: AND, dependencies: [1, ht], shiftFactor: undefined, value: undefined
